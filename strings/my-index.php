@@ -110,8 +110,8 @@ var_dump( $some_random_fix);
   doing some quick maffs, if we have 8 columns and 264 items in the array,
   we shall need a total of 33 rows (headers included)
 */
-$rows = 10; // amout of tr
-$cols = 10;// amjount of td
+$rows = 33; // amout of tr
+$cols = 8;// amjount of td
 $array[]=0;
 
 function drawTable($rows, $cols,$array){
@@ -134,10 +134,4 @@ for($tr=1;$tr<=$rows;$tr++){
 echo "</table>";
 }
 drawTable(33,8,$some_random_fix);
-
-
-
-
-
-
  ?>

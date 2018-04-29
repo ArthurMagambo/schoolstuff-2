@@ -15,7 +15,8 @@
       (a). "Quote" - first_name second_name,surname (YEAR).
       (b). .......
       (c). .......
-      (For example                                                                                                  *
+      (For example
+                                                                                               *
         a) "The worth and excellency of a soul is to be measured by the object of its love." -  HENRY P,SCOUGAL (1678).                                      *
       )
     Summary
@@ -29,7 +30,8 @@
 
 $masstxt="
 'Joy is the serious business of heaven.'.LEWIS,CLIVE STAPLES.1964-01-01.https://bit.ly/2HwPJd6
-|'We were not meant to be somebody--we were meant to know Somebody'.PIPER,JOHN STEPHEN.2011-07-17.https://bit.ly/2r31InJ|'He who sings prays twice.'.Hipponensis,Aurelius Augustinus.430-02-30.https://bit.ly/2JwSHuH
+|'We were not meant to be somebody--we were meant to know Somebody'.PIPER,JOHN STEPHEN.2011-07-17.https://bit.ly/2r31InJ|
+|'He who sings prays twice.'.Hipponensis,Aurelius Augustinus.430-02-30.https://bit.ly/2JwSHuH
 |'The task of the modern educator is not to cut down jungles but to irrigate deserts.'.LEWIS,CLIVE STAPLES.1943-09-23.https://bit.ly/2HwPJd6
 |'There is not one blade of grass, there is no color in this world that is not intended to make us rejoice.'.Calvin,John C.1530-10-09.https://www.brainyquote.com/authors/john_calvin
 |'The worth and excellency of a soul is to be measured by the object of its love.'.SCOUGAL,HENRY P.1678-08-23.https://bit.ly/2Kh1VMR
@@ -45,9 +47,46 @@ $masstxt="
 ";
 
 // array to storee the text
-$new_array = explode('|', $masstxt);
+$newmass=trim($masstxt,"-");
+$new_array = explode('|', $newmass);
+/*
+testing the foreach looping
 foreach($new_array as $smallpiece)
 {echo "<p>".$smallpiece."</p>";}
+*/
+// finding all dates  to convert to years
+// a lot of regex to be used
+foreach($new_array as $smallpiece)
+{
+
+  preg_match_all('!\d+!', $smallpiece, $matches);// finds ALL numbers in a string(the smallpiece in this case)
+  //testing print for all dates
+  /*print_r($matches); works*/
+  //matches resulted in a multidemintional array
+  foreach($matches as $value)//accessing the first array to get the array with the real deal values
+  {
+    foreach($value as $unit)//accessing the second array for the actual values
+    {
+      $year =implode(" ",$value);  //mashes all array content nice and tidy to make one string item
+      $just_years= $value[0]; // takes only the first four chars which denote the year
+
+    }
+
+
+
+  }
+
+
+
+
+
+echo "<p>".$smallpiece."</p>";
+
+}
+
+//echo "<p>".$smallpiece."</p>";//final fixed string
+echo "<h1> The Summary </h1>";
+echo "<p>".count($new_array)." Quotes in Total<p>";
 ?>
 </p>
 </body>

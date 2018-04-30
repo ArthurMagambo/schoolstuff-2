@@ -87,6 +87,7 @@ echo "<p>".$smallpiece."</p>";
 //echo "<p>".$smallpiece."</p>";//final fixed string
 echo "<h1> The Summary </h1>";
 echo "<p>".count($new_array)." Quotes in Total<p>";
+//end of php
 ?>
 </p>
 </body>

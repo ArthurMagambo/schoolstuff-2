@@ -1,4 +1,5 @@
 <?php
+/*
 class Remember{
   //attributes
   private $oop;
@@ -15,6 +16,6 @@ public function setOop($param){
 }
 }
 $newObject = new Remember();
-
+*/
 
 ?>

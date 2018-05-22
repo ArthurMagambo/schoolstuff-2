@@ -1,4 +1,9 @@
+
 <?php
+/*namespaces have 2 primary uses;
+  avoid name colissions
+  to have a a way of aliasing and shortening refs
+*/
 namespace takwimu;
 use \PDO as PDO;
 /*
@@ -24,12 +29,12 @@ permission_id - integer (fk : permission table)
 user_id : integer,autoincrement(fk : user table)
 ############################################
 */
-class Datah{
+public class Datah{
   //properties
-  const DB_HOST = '127.0.0.1';
-  const DB_NAME = 'testor';
-  const DB_USER = 'testor';
-  const DB_PASS = 'testor';
+  const DB_HOST = '10.20.113.55';
+  const DB_NAME = '91383';
+  const DB_USER = '91383';
+  const DB_PASS = '91383r';
 
   private $host;
   private $dbname;
@@ -48,7 +53,7 @@ class Datah{
   {
     //Init
     // assigning the host, database name, username and password
-    //maybe a form for this??
+    //maybe a form for this?? To allow the user to input their own connection details
     $this->host = $host;
     $this->dbname = $dbname;
     $this->user = $username;

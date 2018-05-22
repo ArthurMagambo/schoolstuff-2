@@ -74,7 +74,7 @@ public class Datah{
    */
   //@TODO : Include conditions
   public function getAll(string $table){
-
+//this uses execute notation
       //Get the connection object
       //write the query
       $sql = "SELECT * FROM {$table}";
@@ -91,7 +91,7 @@ public class Datah{
   //@TODO Insert a bunch of values to a table
   public function insert(string $name,int $number, int $country_id,string $table )// inserting name, number and country id
   {
-    $inssql = "INSERT INTO $table(name, phone_number, country_id)
+    $inssql = "INSERT INTO {$table}(name, phone_number, country_id)
 VALUES ( $name,$numer, $country_id)";
 $statement = $this->pdo->prepare($inssql);
 $statement->execute();
@@ -99,7 +99,7 @@ $statement->execute();
 
   }
     //@TODO : Update a bunch of values based on a condition
-    public update(){
+    public update(){//TBD
 
 
 

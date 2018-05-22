@@ -5,6 +5,7 @@
 
 */
 namespace watu;
+use \PDO as PDO;
 class Usar extends Datah {
   //allow users to manipulate data
   const HOST = '10.20.113.55';
@@ -40,7 +41,11 @@ public function __construct(
         echo $e->getMessage();
       }
     }
-  
+//all needed method are inheritedd from the Database class
+//check if all methods needed exist in parent class
+parent::getAll(string $table);
+parent::delete(string $item, string $table);
+parent::insert(string $name,int $number, int $country_id,string $table );
 
 }
 

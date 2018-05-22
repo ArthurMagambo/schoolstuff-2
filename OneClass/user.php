@@ -6,10 +6,11 @@
 */
 namespace watu;
 use \PDO as PDO;
+//using inheritance to allow borrowing of predefined methods in Datah
 class Usar extends Datah {
   //allow users to manipulate data
   const HOST = '10.20.113.55';
-  const NAME = '91383';
+  const NAME = '91383_oop';
   const USER = '91383';
   const PASS = '91383';
   //variables
@@ -48,6 +49,8 @@ parent::delete(string $item, string $table);
 parent::insert(string $name,int $number, int $country_id,string $table );
 
 }
+//calling stuff to test
+
 
 }
 ?>

@@ -47,7 +47,7 @@ public function __construct(
 parent::getAll(string $table);
 parent::delete(string $item, string $table);
 parent::insert(string $name,int $number, int $country_id,string $table );
-
+parent::updateUser($name,$pnumber,$countryID);
 }
 //calling stuff to test
 

@@ -89,22 +89,31 @@ public class Datah{
   $statement->execute();
 }
   //@TODO Insert a bunch of values to a table
-  public function insert(string $name,int $number, int $country_id,string $table )// inserting name, number and country id
+  public function insert(string $name,int $phonenumber, int $country_id,string $table )// inserting name, number and country id
   {
     $inssql = "INSERT INTO {$table}(name, phone_number, country_id)
-VALUES ( $name,$numer, $country_id)";
+VALUES ( $name,$phonenumber, $country_id)";
 $statement = $this->pdo->prepare($inssql);
 $statement->execute();
 
 
   }
-    //@TODO : Update a bunch of values based on a condition
-    public update(){//TBD
+    //@TODO : updates the User Table    public updateUser($name,$pnumber,$countryID){//TBD
+    //  $table = "User"
+      $update = "UPDATE User
+SET name = $name,
+phone_number = $pnumber,
+country_id =$countryID
+WHERE name == $name; "
+
+$statement = $this->pdo->prepare($update);
+$statement->execute();
+
 
 
 
     }
-  //@TODO : Parameter binding
+
 }
 //calling stuff to test them
 

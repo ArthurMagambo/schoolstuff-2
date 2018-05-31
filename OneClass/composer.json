@@ -3,3 +3,8 @@
     "katzgrau/klogger": "dev-master"
   }
 }
+{
+    "require": {
+        "doctrine/orm": "*"
+    }
+}

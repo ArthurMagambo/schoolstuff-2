@@ -1,37 +1,19 @@
+// defining interface for the classes
 <?php
-/*namespaces have 2 primary uses;
-  avoid name colissions
-  to have a a way of aliasing and shortening refs
-*/
-namespace takwimu;
-use \PDO as PDO;
-/*
-##########################################
-user
-id - integer,autoincrement
-name - text
-phone_number - varchar(20)
-country_id - integer
-##########################################
-role
-id - integer,autoincrement
-name - text
-#########################################
-permission
-id - integer,autoincrement
-name - text
-#########################################
-role_permission
-id - integer,autoincrement
-role_id - integer (fk : role_table)
-permission_id - integer (fk : permission table)
-user_id : integer,autoincrement(fk : user table)
-############################################
-*/
-public class Datah{
-  //properties
+public interface Crud//Ill use this later. Most classes will use it
+{
+  function update();//to be fragmented to allow for specialized updating
+                    //maybe a form could work with this update query??
+  function delete();
+  function insert();
+  function create();
+  function getAll();
+}
+public class Database implements Crud//class to handle all data (ish)
+{
+  //connection dtails
   const DB_HOST = '10.20.113.55';
-  const DB_NAME = '91383_oop';
+  const DB_NAME = '91383_oop';//will be changed later on
   const DB_USER = '91383';
   const DB_PASS = '91383';
   private $host;
@@ -40,7 +22,7 @@ public class Datah{
   private $pass;
   private $pdo;
   private $isConn;
-//constructor
+  //the constructor
   public function __construct
   (
     $host = self::DB_HOST,
@@ -94,6 +76,8 @@ $statement->execute();
   }
     //@TODO : updates the User Table    public updateUser($name,$pnumber,$countryID){//TBD
     //  $table = "User"
+public function update()
+{
       $update = "UPDATE User
 SET name = $name,
 phone_number = $pnumber,
@@ -103,5 +87,4 @@ $statement = $this->pdo->prepare($update);
 $statement->execute();
     }
 }
-//calling stuff to test them
 ?>
